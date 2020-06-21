@@ -15,6 +15,14 @@ It can be configured with many existing cloud storage services (like Google Driv
   The "Config" and "help" button are self exaplanatory.
   The "Quit" button does not only close the application but also closes the application's tray, if it's running.
 
+-How to install this application:
+ First make sure you have the required dependencies (see below) then click the version you want to download:
+ -- https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-antix-version.sh
+ -- https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-general-version.sh
+ 
+ And save the file. Don't forget to make it executable (select the file in your File Manager and, under it's properties, Choose to make "Executable" or "run as aplication", it dependes on the File Manager you use).
+  That's it. The install process is done. Click it and execute it!
+
  Main Dependencies ( that I'm aware of):
 - "rclone" (the only dependency you have to install if you run the antix version of the script in antiX Linux full version), 
 - "yad" and "desktop-defaults-run" (already provided out of the box in antiX full version)
