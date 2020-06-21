@@ -99,8 +99,8 @@ eval "nohup  $myVar2 ~/$mount_point_no_spaces $and"
 echo  Running mount command: $myVar2 ~/$mount_point_no_spaces
 
 #show the cloud service contents on the default file manager: for other distros other than antiX, that have xdg-open installed uncoment the following line and comment the "desktop-defaults" one...
- #xdg-open "~\$mount_point_no_spaces"  
-desktop-defaults-run -fm ~/$mount_point_no_spaces
+ xdg-open "~/$mount_point_no_spaces"  
+ # desktop-defaults-run -fm ~/$mount_point_no_spaces
 } #end of 'Main_window' funtion
 
 export -f Help Manage_remotes Main_window
