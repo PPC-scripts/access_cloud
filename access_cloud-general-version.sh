@@ -34,7 +34,7 @@ Manage_remotes(){
 	
 	 foo=$?
 		if [[ $foo -eq 3 ]]; then
-			tray=$(s) && echo $tray > /tmp/rclone_tray.txt
+			tray=$(yad  --title="Access Cloud Storage - Configuration" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --form --center --field 'Use Tray icon - NOTE: Requires restart!':chk true) && echo $tray > /tmp/rclone_tray.txt
 		fi
 		
 	Main_window
@@ -49,7 +49,7 @@ now=`date +"%Y-%m-%d"`
 # Choose an existing "remote" cloud service using yad (or unmount or manage "remotes")
  rclone listremotes > /tmp/rclone_remote_list.txt
  log_file="/tmp/rclone_remote_list.txt"
- selection=$(yad --title="Access Cloud Storage" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --width=550 --height=400 --center --separator=" " --list  --column=" Double click the 'remote' Cloud service that you want to access "  --button="Unmount all 'remote' Drives":1 --button="Configuration":2 --button="Help":"bash -c Help" --button=gtk-quit:3 < /tmp/rclone_remote_list.txt)
+ selection=$(yad --title="Access Cloud Storage" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --width=550 --height=400 --center --separator=" " --list  --column=" Double click the 'remote' Cloud service that you want to access "  --button="Unmount Drives":1 --button="Configuration":2 --button="Help":"bash -c Help" --button=gtk-quit:3 < /tmp/rclone_remote_list.txt)
  foo=$?
 
 if [[ $foo -eq 3 ]]; then
@@ -77,7 +77,7 @@ done
 	Main_window
 fi
 
-####This avoids errors, if no selection was made (example: user closed the window):
+####This avoids errors, if no selection was made:
 if [ -z "$selection" ]; then
 		exit 1
 fi
@@ -97,10 +97,9 @@ myVar=$(echo "rclone --vfs-cache-mode writes mount "${comma}""${selection}"${com
 myVar2=`echo $myVar | sed -E 's/.(.)$/\1/'`
 eval "nohup  $myVar2 ~/$mount_point_no_spaces $and"
 echo  Running mount command: $myVar2 ~/$mount_point_no_spaces
-
 #show the cloud service contents on the default file manager: for other distros other than antiX, that have xdg-open installed uncoment the following line and comment the "desktop-defaults" one...
  xdg-open "~/$mount_point_no_spaces"  
- # desktop-defaults-run -fm ~/$mount_point_no_spaces
+ desktop-defaults-run -fm ~/$mount_point_no_spaces
 } #end of 'Main_window' funtion
 
 export -f Help Manage_remotes Main_window
@@ -113,8 +112,6 @@ if grep -Fxq $tray /tmp/rclone_tray.txt ;then
     pkill yad
 yad --notification --image="/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png" --command="bash -c Main_window" --text="Left click: Access Cloud Storage (Middle click: exits)"
 else
-echo  Show Tray icon is set to:
 cat /tmp/rclone_tray.txt
-Main_window
 #    exit 1
 fi
