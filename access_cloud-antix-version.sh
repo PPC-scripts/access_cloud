@@ -55,7 +55,8 @@ now=`date +"%Y-%m-%d"`
 # Choose an existing "remote" cloud service using yad (or unmount or manage "remotes")
  rclone listremotes > /tmp/rclone_remote_list.txt
  log_file="/tmp/rclone_remote_list.txt"
- selection=$(yad --title="Access Cloud Storage" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --width=550 --height=400 --center --separator=" " --list  --column=" Double click the 'remote' Cloud service that you want to access "  --button="Unmount Drives":1 --button="Configuration":2 --button="Help":"bash -c Help" --button=gtk-quit:3 < /tmp/rclone_remote_list.txt)
+ #selection=$(yad --title="Access Cloud Storage" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --width=550 --height=400 --center --separator=" " --list  --column=" Double click the 'remote' Cloud service that you want to access "  --button="Unmount Drives":1 --button="Configuration":2 --button="Help":"bash -c Help" --button=gtk-quit:3 < /tmp/rclone_remote_list.txt)
+ selection=$(yad --title="Access Cloud Storage" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --width=550 --height=400 --center --separator=" " --list  --column=" Double click the 'remote' Cloud service that you want to access "  --button="Unmount Drives!!Unmounts all 'remote' cloud drives":1 --button="Configuration!!Allows to manage cloud drives and the tray icon":2 --button="Help":"bash -c Help" --button="Quit!gtk-quit!Closes the application and its tray icon":3 < /tmp/rclone_remote_list.txt)
  foo=$?
 
 if [[ $foo -eq 3 ]]; then
