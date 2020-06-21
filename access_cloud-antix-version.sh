@@ -15,6 +15,12 @@
 	fi
 #Clear log file(s), export function(s), set global variables:
 rm /tmp/rclone_remote_list.txt
+#IF no config file for the tray icon exists, create one and set to show tray by default:
+if [ ! -f /tmp/rclone_tray.txt ]; then
+    echo "rclone_tray.txt not found!"
+    tray_default="TRUE|"
+    echo $tray_default > /tmp/rclone_tray.txt
+fi
 # Generate log file with configured "remote" cloud drives and check if log file is empty, if so,  present user with option to configure a new cloud "remote" drive
 rclone listremotes > /tmp/rclone_remote_list.txt
 log_file="/tmp/rclone_remote_list.txt"
