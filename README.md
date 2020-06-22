@@ -15,8 +15,8 @@ It can be configured with many existing cloud storage services (like Google Driv
   The "Config" and "help" button are self exaplanatory.
   The "Quit" button does not only close the application but also closes the application's tray, if it's running.
 
--How to install this application:
- First make sure you have the required dependencies (see below) then right click the version you want to download:
+*How to install this application:
+ First make sure you have the required dependencies (Note: in antiX, during the first run, the script allows the user to automaticaly install rclone. For the other versions, see below) then right click the version you want to download:
   https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-antix-version.sh , https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-MX-version.sh
  Or try your luck with a untested "general" version, that you may have to tweak to get working) https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-general-version.sh
  
