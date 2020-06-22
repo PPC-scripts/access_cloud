@@ -8,10 +8,14 @@
 	 yad --title="Access Cloud Storage- Error" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --center --text=" Please install yad using your Package Manager! "
 		exit 1
 	fi
-## testing for rclone
+## testing for rclone and, in antiX, try to install it if user so selects
 	if ! [ -x "$(command -v rclone)" ]; then
-	 yad --title="Access Cloud Storage- Error" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --center --text=" Please install rclone using your Package Manager! "
-		exit 1
+	# yad --title="Access Cloud Storage- Error" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --center --text=" Please install rclone using your Package Manager! "
+	yad --title="Access Cloud Storage- Error" --window-icon=/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png --center --text="rclone needs to be installed. \n Do you want to automaticaly try to install it (you'll have to relaunch this application)? " --button="Install it":1 --button="Close":2	
+	 foo=$?
+		if [[ $foo -eq 1 ]]; then desktop-defaults-run -t  gksudo apt install rclone #x-terminal-emulator -e gksudo apt install rclone -y
+		fi
+	  exit 1
 	fi
 #Clear log file(s), export function(s), set global variables:
 rm /tmp/rclone_remote_list.txt
