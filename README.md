@@ -25,5 +25,6 @@ It can be configured with many existing cloud storage services (like Google Driv
 
  Main Dependencies ( that I'm aware of):
 - "rclone" (the only dependency you have to install if you run the antiX Linux full version or the MX version), 
-- "yad" and "desktop-defaults-run" (already provided out of the box in antiX full version)
-- "xdg-open" (if you are not running antiX and you want the cloud storage drive to automatically pop up in your default file manager, it's not an essencial dependency, it's only used to automaticaly present the mounted cloud drive contents on the default file browser)
+- "fusermount" (used to make sure the "remote" cloud drives are really unmounted, already provided out of the box with antiX and MX Linux)
+- "yad" and "desktop-defaults-run" (already provided out of the box in antiX full version and Mx Linux)
+- "xdg-open" ( already provided with Mx Linux. its used if you are not running antiX and you want the cloud storage drive to automatically pop up in your default file manager, it's not an essencial dependency, it's only used to automaticaly present the mounted cloud drive contents on the default file browser)
