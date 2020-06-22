@@ -24,6 +24,6 @@ It can be configured with many existing cloud storage services (like Google Driv
   That's it. The install process is done. Click it and execute it!
 
  Main Dependencies ( that I'm aware of):
-- "rclone" (the only dependency you have to install if you run the antix version of the script in antiX Linux full version), 
+- "rclone" (the only dependency you have to install if you run the antiX Linux full version or the MX version), 
 - "yad" and "desktop-defaults-run" (already provided out of the box in antiX full version)
 - "xdg-open" (if you are not running antiX and you want the cloud storage drive to automatically pop up in your default file manager, it's not an essencial dependency, it's only used to automaticaly present the mounted cloud drive contents on the default file browser)
