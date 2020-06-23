@@ -17,7 +17,7 @@ It can be configured with many existing cloud storage services (like Google Driv
 
 ## How to install this application:
  First make sure you have the required dependencies (Note: in antiX, during the first run, the script allows the user to automaticaly install rclone. For the other versions, see below) then right click the version you want to download:
- https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-antix-v2.sh , https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-MX-v2.sh
+ https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-antiX-v2.sh , https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-MX-v2.sh
   And save the file. Don't forget to make it executable (select the file in your File Manager and, under it's properties, Choose to make "Executable" or "run as aplication", it dependes on the File Manager you use).
   That's it. The install process is done. Click it and execute it!
  
