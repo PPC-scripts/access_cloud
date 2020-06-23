@@ -17,14 +17,16 @@ It can be configured with many existing cloud storage services (like Google Driv
 
 *How to install this application:
  First make sure you have the required dependencies (Note: in antiX, during the first run, the script allows the user to automaticaly install rclone. For the other versions, see below) then right click the version you want to download:
-  https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-antix-version.sh , https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-MX-version.sh
- Or try your luck with a untested "general" version, that you may have to tweak to get working) https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-general-version.sh
- 
- And save the file. Don't forget to make it executable (select the file in your File Manager and, under it's properties, Choose to make "Executable" or "run as aplication", it dependes on the File Manager you use).
+ https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-antix-v2.sh , https://raw.githubusercontent.com/PPC-scripts/access_cloud/master/access_cloud-MX-v2.sh
+  And save the file. Don't forget to make it executable (select the file in your File Manager and, under it's properties, Choose to make "Executable" or "run as aplication", it dependes on the File Manager you use).
   That's it. The install process is done. Click it and execute it!
-
+ 
+ --Notes about the different versions:
+   The antiX version is the original, and usually most up to date version of the script and version should also work with any system (that has all the requerired dependencies), but the File Manager does not automaticaly open the cloud drive mount point  (Or try your luck with a untested older "general" version, that you may have to tweak to get working) .
+ The Mx Linux version is now virtually identical to the antiX version, using a different icon (that is provided out of the box with MX Linux) and also launching Thunar to automaticaly access the cloud drive's content.
+ 
  Main Dependencies ( that I'm aware of):
 - "rclone" (the only dependency you have to install if you run the antiX Linux full version or the MX version), 
 - "fusermount" (used to make sure the "remote" cloud drives are really unmounted, already provided out of the box with antiX and MX Linux)
 - "yad" and "desktop-defaults-run" (already provided out of the box in antiX full version and Mx Linux)
-- "xdg-open" ( already provided with Mx Linux. its used if you are not running antiX and you want the cloud storage drive to automatically pop up in your default file manager, it's not an essencial dependency, it's only used to automaticaly present the mounted cloud drive contents on the default file browser)
+- "xdg-open" (already included in antiX, MX Linux and most Linux distros)
